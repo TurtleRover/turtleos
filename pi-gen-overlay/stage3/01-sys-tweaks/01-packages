@@ -1,1 +1,1 @@
-jq python3-pip wiringpi
+jq python3-pip wiringpi rng-tools

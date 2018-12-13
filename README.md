@@ -61,23 +61,32 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
  * Turtle Rover configs
 ### System tweaks
  * Patch sshd to disallow client to pass locale environment variables
- * Add custom `hostapd.service`
  * Add `turtle.service`
- * Install `hostapd`
  * Install `uv4l` and custom config
+ * Install `rng-tools` to feed hwrng into /dev/random
 ### Network tweaks
  * Patch `hosts`
+ * Add udev rules for network interface names
+    * Internal wifi interface `wlan_int`
+    * External wifi interface `wlan_ext`
  * Add systemd network files
-    * External wifi interface (hotspot) `wlan0ext`, ip:`10.0.0.1`, default SSID: `TurtleRover-XXYYY`, password: `password`
-    * Internal wifi interface `wlan0int`
- * Add custom `wpa_supplicant-wlan0int.conf`
+    * Internal eth interface `eth0`, ip:`DHCP`
+    * External wifi interface `wlan_ext`, ip:`10.0.0.1`
+ * Install `dnsmasq`
+ * Install `hostapd`
+ * Install `NetworkManager`
  * Add custom `dnsmasq.conf`
+ * Add custom `hostapd.service`
+ * Add custom `hostapd.conf` (hotspot)
+    * interface: `wlan_ext`, SSID: `TurtleRover-XXYYY`, password: `password`
+ * Add custom `NetworkManager.conf`
+    * ignore `eth0` and `wlan_ext` interfaces (control only `wlan_int`)
  * Add custom `resolvconf.conf`
  * Add custom `sysctl.conf`
- * Install `dnsmasq`
 
 ### Custom software
  * [Turtle Control Software](https://github.com/TurtleRover/tcs)
+ * [OpenOCD](https://github.com/TurtleRover/openocd)
 
 ## How it works
  * [First of read readme from original pi-gen repo](https://github.com/RPi-Distro/pi-gen)

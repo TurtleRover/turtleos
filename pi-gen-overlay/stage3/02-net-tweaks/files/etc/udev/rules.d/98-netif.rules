@@ -1,2 +1,2 @@
-KERNEL=="wlan*",ENV{ID_NET_DRIVER}=="brcmfmac",NAME="wlan0int"
-KERNEL=="wlan*",ENV{ID_USB_DRIVER}=="rt2800usb",NAME="wlan0ext",ENV{SYSTEMD_WANTS}="hostapd.service"
+KERNEL=="wlan*",ENV{ID_NET_DRIVER}=="brcmfmac",NAME="wlan_int"
+KERNEL=="wlan*",ENV{ID_USB_DRIVER}=="rt2800usb",NAME="wlan_ext",ENV{SYSTEMD_WANTS}="hostapd.service"

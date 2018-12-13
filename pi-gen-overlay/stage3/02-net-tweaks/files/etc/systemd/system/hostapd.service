@@ -11,8 +11,8 @@ Before=graphical.target
 After=remote-fs.target
 After=network-online.target
 Wants=network-online.target
-BindsTo=sys-subsystem-net-devices-wlan0ext.device
-After=sys-subsystem-net-devices-wlan0ext.device
+BindsTo=sys-subsystem-net-devices-wlan_ext.device
+After=sys-subsystem-net-devices-wlan_ext.device
 
 [Service]
 
