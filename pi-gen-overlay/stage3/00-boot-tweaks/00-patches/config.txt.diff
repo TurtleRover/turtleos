@@ -9,3 +9,4 @@
 +dtoverlay=pi3-disable-bt
 +disable_splash=1
 +gpu_mem=256
++start_x=1
